@@ -22,17 +22,17 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.TextView;
 
 /**
  * Created by Bao Le on 9/26/2015.
  * Add foreground to base view
  */
-public class ForegroundTextView extends TextView {
+public class ForegroundTextView extends AppCompatTextView {
 
-    private final ForegroundViewImlp mImpl = new ForegroundViewImlp(this);
+    private final ForegroundViewImpl mImpl = new ForegroundViewImpl(this);
 
     public ForegroundTextView(Context context) {
         this(context, null);
@@ -46,12 +46,6 @@ public class ForegroundTextView extends TextView {
     public ForegroundTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(context, attrs, defStyle);
-    }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public ForegroundTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(context, attrs, defStyleAttr);
     }
 
     private void init(Context context, AttributeSet attrs, int defStyle) {

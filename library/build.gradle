@@ -1,17 +1,12 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
-
-group = 'com.anttek.foreground.widget'
-version = VERSION
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion BUILD_TOOLS_VERSION
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -24,48 +19,5 @@ android {
 }
 
 dependencies {
-}
-
-task generateSourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier 'sources'
-}
-
-task generateJavadocs(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath()
-            .join(File.pathSeparator))
-}
-
-task generateJavadocsJar(type: Jar) {
-    from generateJavadocs.destinationDir
-    classifier 'javadoc'
-}
-
-generateJavadocsJar.dependsOn generateJavadocs
-
-artifacts {
-    archives generateJavadocsJar
-    archives generateSourcesJar
-}
-
-bintray {
-    user = USER
-    key = BINTRAY_KEY
-    pkg {
-        repo = 'maven'
-        name = 'com.anttek.foreground.widget'
-
-        version {
-            name = VERSION
-            desc = 'Foregroundview'
-            released  = new Date()
-            vcsTag = VERSION
-        }
-
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/baole/ForegroundView.git'
-        websiteUrl = 'https://github.com/baole/ForegroundView'
-    }
-    configurations = ['archives']
+    compile 'com.android.support:appcompat-v7:25.3.1'
 }

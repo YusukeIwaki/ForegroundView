@@ -22,17 +22,17 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.Button;
 
 /**
  * Created by Bao Le on 9/26/2015.
  * Add foreground to base view
  */
-public class ForegroundButton extends Button {
+public class ForegroundButton extends AppCompatButton {
 
-    private final ForegroundViewImlp mImpl = new ForegroundViewImlp(this);
+    private final ForegroundViewImpl mImpl = new ForegroundViewImpl(this);
 
     public ForegroundButton(Context context) {
         this(context, null);
@@ -45,12 +45,6 @@ public class ForegroundButton extends Button {
     public ForegroundButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(context, attrs, defStyle);
-    }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public ForegroundButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(context, attrs, defStyleAttr);
     }
 
     private void init(Context context, AttributeSet attrs, int defStyle) {

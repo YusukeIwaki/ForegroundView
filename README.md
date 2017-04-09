@@ -1,58 +1,23 @@
 # ForegroundView
-A collection of Android foreground-enabled views just like FrameLayout. Support following views and viewgroups
+
+A collection of Android foreground-enabled AppCompat views. Support following views and viewgroups
 * ForegroundImageView
 * ForegroundButton
 * ForegroundTextView
 * ForegroundImageButton
 * ForegroundEditText
-* ForegroundWebView
-* ForegroundLinearLayout
-* ForegroundRelativeLayout
-* ForegroundGridLayout
-* ForegroundGridView
-* ForegroundHorizontalScrollView
-* ForegroundListView
-* ForegroundScrollView
-
-# Screenshots
-![GitHub Logo](https://lh6.googleusercontent.com/-afY-VQnVodw/Vga8AjKwFkI/AAAAAAAAMko/RtCMUSkNsqY/w487-h865-no/Screenshot_20150926-223701.png)
 
 # Setup
 Add as a dependency to your ``build.gradle``:
+
 ```groovy
 repositories {
-    maven {
-        url 'https://dl.bintray.com/baole/maven'
-    }
+    maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compile 'com.anttek.foreground.widget:library:1.1.0@aar'
+    compile 'com.github.YusukeIwaki:ForegroundView:0.0.1'
 }
 ```
-
-# Usages
-
-Add Foregroundxxx to your layout.xml
-
-```
-        <com.anttek.foreground.widget.ForegroundLinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:foreground="@drawable/foreground">
-            //child views
-        </com.anttek.foreground.widget.ForegroundLinearLayout>
-```
-Foreground view supports 3 additional attributes that you can define in layout file
-
-* android:foreground
-* android:foregroundInsidePadding
-* android:foregroundGravity
-
-Alternatively, you can use Java method to change foreground attributes at runtime:
-* setForeground(Drawable)
-* setForegroundGravity(int)
-
-Checkout sample app to see more detail
 
 # License
 ```
